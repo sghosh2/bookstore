@@ -1,0 +1,17 @@
+It has implementation of ternary tree which could be used for phonebook
+
+You are given a catalog of books, which have following attributes.
+         Name
+         Author
+         Publisher
+         Publish year
+         Category
+         Price
+         Count (sold)
+Implement following APIs on top of this catalog
+         addBookToCatalog(Book)
+         searchBook(by partial book name/author)
+         getMostSoldBooks(by author name/category, limit)
+Expectations:
+         Maintain DB on memory
+         Code should be readable. Design, handle naming convention,handle exceptions & should be running
