@@ -124,8 +124,7 @@ public class TernaryTree <E extends Comparable>{
         	// Traverse to find the tree node and also add the value to enable partial match search
         	prev = current;
         	if(current.ch == chars[index]) {
-        		Collection<E> priorityQueue = current.priorityQueue;
-        		priorityQueue.add(val);
+        		current.priorityQueue.add(val);
         		current = current.equal;
         		index++;
         	} else if(current.ch > chars[index]) {
