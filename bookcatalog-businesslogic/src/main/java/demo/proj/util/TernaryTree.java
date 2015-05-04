@@ -93,6 +93,7 @@ public class TernaryTree <E extends Comparable>{
 	
 	@PostConstruct
 	public void init() {
+		System.out.println("initializing  - TernaryTree");
 		root = new Node<E>('x');
 	}
 	

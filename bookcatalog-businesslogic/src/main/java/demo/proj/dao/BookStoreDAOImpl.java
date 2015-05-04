@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import demo.proj.dto.Book;
@@ -22,18 +23,19 @@ public class BookStoreDAOImpl implements BookStoreDAO {
 
 	private AtomicInteger id;
 
+//	/@Resource(name="ternaryTreeBook")
+	@Resource(name="ternaryTree")
 	private TernaryTree<Book> bookDB;
 	
 	@PostConstruct
 	public void init() {
 		System.out.println("init - post cons BookStoreDAOImpl");
 		id = new AtomicInteger(1);
-		bookDB = new TernaryTree<Book>();
+		//bookDB = new TernaryTree<Book>();
 	}
 	
 	
 	public int addBook(Book book) {
-		
 		book.setId(id.getAndIncrement());
 		bookDB.add(book.getName(), book);
 		return book.getId();
@@ -65,6 +67,7 @@ public class BookStoreDAOImpl implements BookStoreDAO {
 	public static void main(String[] a) {
 		BookStoreDAOImpl dao = new BookStoreDAOImpl();
 		dao.init();
+		dao.bookDB = new TernaryTree<Book>();
 		dao.bookDB.init();
 		Book b1 = new Book();
 		b1.setName("Truth");
