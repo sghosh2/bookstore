@@ -26,7 +26,7 @@ POST
 http://localhost:8080/bookstore/bookstore/addbook
 
 {"book":
-{"name":"The truth",
+{"name":"truth of life",
  "author":"Sam",
   "count":"10"
 }
@@ -37,7 +37,7 @@ searchBook
 -----------
 GET
 
-http://localhost:8080/bookstore/bookstore/searchbook/The
+http://localhost:8080/bookstore/bookstore/searchbook/truth
                                                       ^
               Partial BOOK NAME TO SEARCH ----------->|
               
