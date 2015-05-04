@@ -38,7 +38,7 @@ searchBook
 GET
 
 http://localhost:8080/bookstore/bookstore/searchbook/The
-													  ^
+                                                      ^
               Partial BOOK NAME TO SEARCH ----------->|
               
 Response will be ordered by count
