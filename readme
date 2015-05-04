@@ -15,3 +15,31 @@ Implement following APIs on top of this catalog
 Expectations:
          Maintain DB on memory
          Code should be readable. Design, handle naming convention,handle exceptions & should be running
+         
+
+Example: 
+
+addBook
+-----------
+POST
+
+http://localhost:8080/bookstore/bookstore/addbook
+
+{"book":
+{"name":"The truth",
+ "author":"Sam",
+  "count":"10"
+}
+}
+
+
+searchBook
+-----------
+GET
+
+http://localhost:8080/bookstore/bookstore/searchbook/The
+													  ^
+              Partial BOOK NAME TO SEARCH ----------->|
+              
+Response will be ordered by count
+                                                      

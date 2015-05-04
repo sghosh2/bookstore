@@ -1,6 +1,7 @@
 package demo.proj.service;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import javax.annotation.Resource;
 import javax.ws.rs.Consumes;
@@ -44,7 +45,8 @@ public class BookStoreServiceImpl  implements BookStoreService {
 
 	public BookList searchBook(String bookName) {
 		// TODO Auto-generated method stub
-		return bookDao.searchBook(bookName);
+		BookList bookLst = bookDao.searchBook(bookName);
+		return bookLst;
 	}
 
 	public BookList getMostSoldBooks(String bookName) {
@@ -79,10 +81,12 @@ public class BookStoreServiceImpl  implements BookStoreService {
 		
 		
 		
-/*		// make deserializer use JAXB annotations (only)
+/*		
+    	// make deserializer use JAXB annotations (only)
 	    mapper.getDeserializationConfig().withAppendedAnnotationIntrospector(introspector);
 	    // make serializer use JAXB annotations (only)
-	    mapper.getSerializationConfig().withAppendedAnnotationIntrospector(introspector);*/
+	    mapper.getSerializationConfig().withAppendedAnnotationIntrospector(introspector);
+	*/
 		
 		String bookstr = "{/\"book/\":{/\"name/\":/\"The truth/\",/\"author/\":/\"Sam/\",/\"count/\":/\"10/\"}}";
 		
@@ -92,6 +96,9 @@ public class BookStoreServiceImpl  implements BookStoreService {
 		   book.setName("Truth");
 		   book.setAuthor("Divija");
 		   book.setCount(10);
+		   Calendar pubdt = Calendar.getInstance();
+		   pubdt.set(2015, Calendar.MAY, 1);
+		   //book.setPublishDate(pubdt);
 		   
 		   String jsonData = mapper.writeValueAsString(book);
 		   
