@@ -10,6 +10,14 @@ import com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair;
 import com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
 
+/**
+ * Added it to enable annotation JAXB annotation introspection so that it scans and
+ * serializes/deserializes the  POJO <--> JSON 
+ * 
+ * 
+ * @author sam
+ *
+ */
 public class CustomObjectMapper extends ObjectMapper {
 
 	public CustomObjectMapper() {
